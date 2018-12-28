@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Fprojectnew</string>
+<!--<general>-->
+<string name="app_name">Fprojectnew</string>
+
+<!--<teams>-->
+<string name="team_dortmund">Dortmund</string>
+<string name="team_bayern">Bayern</string>
+
+<!--<scenes>-->
+<string name="scene_beginning">It\'s starting! %1s vs %2s</string>
+<string name="scene_pass">Passs kommt </string>
+<string name="scene_shot">Schuss von</string>
+<string name="scene_ending">Spiel ist vorbei!</string>
+
+<!--<actions>-->
+<string name="action_penalty">Elfmeter!</string>
+<string name="action_free_kick">Freistoß</string>
+
 </resources>
