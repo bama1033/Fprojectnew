@@ -3,124 +3,139 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="50dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="50dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="50dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="20dp" />
 
     <TextView
         android:id="@+id/team_home"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/vertical_margin_small"
-        android:layout_marginEnd="@dimen/horizontal_margin"
-        android:layout_marginStart="@dimen/horizontal_margin"
-        android:layout_marginTop="@dimen/vertical_margin"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@id/counter_home"
-        app:layout_constraintEnd_toStartOf="@id/divider"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/team_away"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
         tools:text="Dortmund" />
 
     <TextView
         android:id="@+id/team_away"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/vertical_margin_small"
-        android:layout_marginEnd="@dimen/horizontal_margin"
-        android:layout_marginStart="@dimen/horizontal_margin"
-        android:layout_marginTop="@dimen/vertical_margin"
+        android:layout_marginStart="8dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@id/counter_away"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/divider"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/team_home"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
         tools:text="Bayern" />
+
 
     <TextView
         android:id="@+id/game_clock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="90:00"
+        android:text="90. Minute"
         android:textSize="18sp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@id/divider"
-        app:layout_constraintEnd_toEndOf="@id/counter_home"
-        app:layout_constraintStart_toStartOf="@id/divider"
-        app:layout_constraintTop_toTopOf="@id/team_home" />
+        app:layout_constraintEnd_toStartOf="@id/team_away"
+        app:layout_constraintStart_toEndOf="@id/team_home"
+        app:layout_constraintTop_toBottomOf="@id/team_home" />
 
-    <TextView
-        android:id="@+id/minute_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Minute"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/divider"
-        app:layout_constraintEnd_toEndOf="@id/divider"
-        app:layout_constraintStart_toStartOf="@id/counter_away"
-        app:layout_constraintTop_toTopOf="@id/team_home" />
+    <ImageView
+        android:id="@+id/image_home"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@id/team_home"
+        app:layout_constraintTop_toBottomOf="@id/team_home"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
         android:id="@+id/counter_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="402dp"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="10dp"
-        android:text="0"
+        android:text="1"
         android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/team_home"
-        tools:text="1" />
+        app:layout_constraintEnd_toStartOf="@id/game_clock"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/game_clock" />
 
     <TextView
         android:id="@+id/divider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
-        android:layout_marginTop="88dp"
         android:text=":"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@id/counter_home"
-        app:layout_constraintStart_toStartOf="@id/counter_away"
-        app:layout_constraintTop_toBottomOf="@id/team_home" />
+        app:layout_constraintEnd_toStartOf="@id/counter_away"
+        app:layout_constraintStart_toEndOf="@id/counter_home"
+        app:layout_constraintTop_toBottomOf="@id/game_clock" />
 
     <TextView
         android:id="@+id/counter_away"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="402dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginTop="10dp"
         android:text="0"
         android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/team_away"
-        tools:text="0" />
+        app:layout_constraintStart_toEndOf="@id/game_clock"
+        app:layout_constraintTop_toBottomOf="@id/game_clock" />
 
+    <ImageView
+        android:id="@+id/image_away"
+        android:layout_width="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="@id/team_away"
+        app:layout_constraintTop_toBottomOf="@id/team_away"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
         android:id="@+id/game_course_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:text="Matchzusammenfassung"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toTopOf="@id/game_course"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/divider" />
+        app:layout_constraintTop_toBottomOf="@id/counter_home" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/game_course"
@@ -130,29 +145,24 @@
         android:layout_marginTop="10dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@id/button_one"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@id/game_course_title" />
 
     <Button
         android:id="@+id/button_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="48dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Yes"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintStart_toStartOf="@id/guideline_start" />
 
     <Button
         android:id="@+id/button_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="48dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+        android:text="No"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end" />
 
 </android.support.constraint.ConstraintLayout>
